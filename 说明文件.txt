@@ -1,0 +1,29 @@
+
+1.新建站点，并解压到根目录。
+
+2.默认隐藏弹幕安装功能，如需自建弹幕，可将根目录index.php里第2行及第5行的  /* 和 */  删除后重新访问域名。
+
+4.后台目录admin建议修改成别人不知道文件夹名，
+
+5.后台账号admin888 ，密码admin666，根据需求设置，另，不要在后台设置json接口的key，直接在config.php的20多行那里设置，切记！！！
+
+6.重要！！！修改config.php第7行的加密key，必须16位，且与js/play.js第15行的key保持一致
+
+
+
+此为苹果CMS 下一集js代码，其他cms可自行研究参考
+
+播放器跨域远程下一集代码：
+修改下列代码中的https://bilibili.ipian.net/?url=     为您的播放器接口
+
+MacPlayer.Html = '<iframe border="0"mozallowfullscreen="mozallowfullscreen"msallowfullscreen="msallowfullscreen"oallowfullscreen="oallowfullscreen"webkitallowfullscreen="webkitallowfullscreen"  src="https://bilibili.ipian.net/?url='+MacPlayer.PlayUrl+'&next=//'+maccms.url+''+parent.MacPlayer.PlayLinkNext+'" height="'+MacPlayer.Height+'" width="100%" height="100%" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" scrolling="no" vspale="0" noResize></iframe>';
+MacPlayer.Show();
+
+
+
+
+
+播放器本地下一集代码：
+
+MacPlayer.Html = '<iframe border="0"mozallowfullscreen="mozallowfullscreen"msallowfullscreen="msallowfullscreen"oallowfullscreen="oallowfullscreen"webkitallowfullscreen="webkitallowfullscreen"  src="'+maccms.path+'/static/player/dmplayers.php?url='+MacPlayer.PlayUrl+'&next='+maccms.path+''+parent.MacPlayer.PlayLinkNext+'" height="'+MacPlayer.Height+'" width="100%" height="100%" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" scrolling="no" vspale="0" noResize></iframe>';
+MacPlayer.Show();
